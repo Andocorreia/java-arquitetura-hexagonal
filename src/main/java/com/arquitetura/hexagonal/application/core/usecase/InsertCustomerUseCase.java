@@ -1,22 +1,25 @@
 package com.arquitetura.hexagonal.application.core.usecase;
 
 import com.arquitetura.hexagonal.application.core.domain.Customer;
-import com.arquitetura.hexagonal.application.ports.outbound.FindAdressByZipCodeOutputPort;
+import com.arquitetura.hexagonal.application.ports.inbound.InsertCustomerInputPort;
+import com.arquitetura.hexagonal.application.ports.outbound.FindAddressByZipCodeOutputPort;
 import com.arquitetura.hexagonal.application.ports.outbound.InsertCustomerOutputPort;
 
-public class InsertCustomerUseCase {
 
-    private final FindAdressByZipCodeOutputPort findAdressByZipCodeOutputPort;
+public class InsertCustomerUseCase implements InsertCustomerInputPort {
+
+    private final FindAddressByZipCodeOutputPort findAddressByZipCodeOutputPort;
     private final InsertCustomerOutputPort insertCustomerOutputPort;
 
-    public InsertCustomerUseCase(FindAdressByZipCodeOutputPort findAdressByZipCodeOutputPort, InsertCustomerOutputPort insertCustomerOutputPor) {
-        this.findAdressByZipCodeOutputPort = findAdressByZipCodeOutputPort;
+    public InsertCustomerUseCase(FindAddressByZipCodeOutputPort findAddressByZipCodeOutputPort, InsertCustomerOutputPort insertCustomerOutputPor) {
+        this.findAddressByZipCodeOutputPort = findAddressByZipCodeOutputPort;
         this.insertCustomerOutputPort = insertCustomerOutputPor;
     }
 
+    @Override
     public void insert(Customer customer, String zipCode) {
-        var adress = findAdressByZipCodeOutputPort.find(zipCode);
-        customer.setAdress(adress);
+        var address = findAddressByZipCodeOutputPort.find(zipCode);
+        customer.setAdress(address);
         insertCustomerOutputPort.insert(customer);
 
     }

@@ -4,18 +4,18 @@ public class Customer {
     private String id;
     private String name;
     private String email;
-    private Adress adress;
+    private Address address;
     private String cpf;
     private Boolean isValidCpf;
 
     public Customer() {
         this.isValidCpf = false;
     }
-    public Customer(String id, String name, String email, Adress adress, String cpf, Boolean isValidCpf) {
+    public Customer(String id, String name, String email, Address address, String cpf, Boolean isValidCpf) {
         this.id = id;
         this.name = name;
         this.email = email;
-        this.adress = adress;
+        this.address = address;
         this.cpf = cpf;
         this.isValidCpf = isValidCpf;
     }
@@ -32,8 +32,8 @@ public class Customer {
         return email;
     }
 
-    public Adress getAdress() {
-        return adress;
+    public Address getAdress() {
+        return address;
     }
 
     public String getCpf() {
@@ -56,8 +56,8 @@ public class Customer {
         this.email = email;
     }
 
-    public void setAdress(Adress adress) {
-        this.adress = adress;
+    public void setAdress(Address address) {
+        this.address = address;
     }
 
     public void setCpf(String cpf) {

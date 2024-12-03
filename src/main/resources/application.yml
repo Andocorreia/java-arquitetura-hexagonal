@@ -1,0 +1,10 @@
+arantes:
+  client:
+    adress:
+        url: http://localhost:8082/adresses
+
+string:
+  data:
+    mongoDb:
+      uri: mongodb+srv://aocorreia1:admin@cluster0.sqqj0.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+      database: hexagonal

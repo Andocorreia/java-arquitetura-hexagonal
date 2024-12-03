@@ -1,6 +1,6 @@
 package com.arquitetura.hexagonal.application.core.domain;
 
-public class Adress {
+public class Address {
 
     private String street;
     private String number;
@@ -9,10 +9,10 @@ public class Adress {
     private String country;
     private String zipCode;
 
-    public Adress() {
+    public Address() {
     }
 
-    public Adress(String street, String number, String city, String state, String country, String zipCode) {
+    public Address(String street, String number, String city, String state, String country, String zipCode) {
         this.street = street;
         this.number = number;
         this.city = city;
@@ -20,7 +20,6 @@ public class Adress {
         this.country = country;
         this.zipCode = zipCode;
     }
-
 
     public String getStreet() {
         return street;
