@@ -1,9 +1,9 @@
 package com.arquitetura.hexagonal.application.core.usecase;
 
 import com.arquitetura.hexagonal.application.core.domain.Customer;
-import com.arquitetura.hexagonal.application.ports.inbound.InsertCustomerInputPort;
-import com.arquitetura.hexagonal.application.ports.outbound.FindAddressByZipCodeOutputPort;
-import com.arquitetura.hexagonal.application.ports.outbound.InsertCustomerOutputPort;
+import com.arquitetura.hexagonal.application.ports.input.InsertCustomerInputPort;
+import com.arquitetura.hexagonal.application.ports.output.FindAddressByZipCodeOutputPort;
+import com.arquitetura.hexagonal.application.ports.output.InsertCustomerOutputPort;
 
 
 public class InsertCustomerUseCase implements InsertCustomerInputPort {

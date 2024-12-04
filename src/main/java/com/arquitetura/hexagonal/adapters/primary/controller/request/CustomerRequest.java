@@ -1,4 +1,4 @@
-package com.arquitetura.hexagonal.adapters.inbound.controller.request;
+package com.arquitetura.hexagonal.adapters.primary.controller.request;
 
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;

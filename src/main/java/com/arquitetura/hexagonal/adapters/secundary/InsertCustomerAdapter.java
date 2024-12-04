@@ -1,9 +1,9 @@
-package com.arquitetura.hexagonal.adapters.outbound;
+package com.arquitetura.hexagonal.adapters.secundary;
 
-import com.arquitetura.hexagonal.adapters.outbound.repository.CustomerRepository;
-import com.arquitetura.hexagonal.adapters.outbound.repository.mapper.CustomerEntityMapper;
+import com.arquitetura.hexagonal.adapters.secundary.repository.CustomerRepository;
+import com.arquitetura.hexagonal.adapters.secundary.repository.mapper.CustomerEntityMapper;
 import com.arquitetura.hexagonal.application.core.domain.Customer;
-import com.arquitetura.hexagonal.application.ports.outbound.InsertCustomerOutputPort;
+import com.arquitetura.hexagonal.application.ports.output.InsertCustomerOutputPort;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

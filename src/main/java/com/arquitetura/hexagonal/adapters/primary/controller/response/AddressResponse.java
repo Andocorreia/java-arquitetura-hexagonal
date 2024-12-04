@@ -1,10 +1,6 @@
-package com.arquitetura.hexagonal.adapters.outbound.repository.entity;
+package com.arquitetura.hexagonal.adapters.primary.controller.response;
 
-import lombok.Data;
-
-@Data
-public class AddressEntity {
-
+public class AddressResponse {
     private String street;
     private String number;
     private String city;

@@ -1,4 +1,4 @@
-package com.arquitetura.hexagonal.adapters.outbound.client.response;
+package com.arquitetura.hexagonal.adapters.secundary.client.response;
 
 import lombok.Data;
 

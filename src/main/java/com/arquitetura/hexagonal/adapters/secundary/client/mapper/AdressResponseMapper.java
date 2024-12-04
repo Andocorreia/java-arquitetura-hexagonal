@@ -1,6 +1,6 @@
-package com.arquitetura.hexagonal.adapters.outbound.client.mapper;
+package com.arquitetura.hexagonal.adapters.secundary.client.mapper;
 
-import com.arquitetura.hexagonal.adapters.outbound.client.response.AdressResponse;
+import com.arquitetura.hexagonal.adapters.secundary.client.response.AdressResponse;
 import com.arquitetura.hexagonal.application.core.domain.Address;
 import org.mapstruct.Mapper;
 

@@ -1,4 +1,4 @@
-package com.arquitetura.hexagonal.application.ports.outbound;
+package com.arquitetura.hexagonal.application.ports.output;
 
 import com.arquitetura.hexagonal.application.core.domain.Address;
 

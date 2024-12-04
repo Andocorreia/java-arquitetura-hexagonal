@@ -1,4 +1,4 @@
-package com.arquitetura.hexagonal.adapters.outbound.repository.entity;
+package com.arquitetura.hexagonal.adapters.secundary.repository.entity;
 
 import lombok.Data;
 import org.springframework.data.annotation.Id;

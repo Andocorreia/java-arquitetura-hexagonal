@@ -1,6 +1,6 @@
-package com.arquitetura.hexagonal.adapters.outbound.client;
+package com.arquitetura.hexagonal.adapters.secundary.client;
 
-import com.arquitetura.hexagonal.adapters.outbound.client.response.AdressResponse;
+import com.arquitetura.hexagonal.adapters.secundary.client.response.AdressResponse;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
