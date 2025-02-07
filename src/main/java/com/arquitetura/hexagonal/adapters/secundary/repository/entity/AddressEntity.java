@@ -1,7 +1,12 @@
 package com.arquitetura.hexagonal.adapters.secundary.repository.entity;
 
-import lombok.Data;
+import lombok.*;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
 @Data
 public class AddressEntity {
 

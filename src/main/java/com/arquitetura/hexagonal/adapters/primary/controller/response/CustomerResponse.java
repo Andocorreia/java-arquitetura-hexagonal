@@ -1,18 +1,18 @@
 package com.arquitetura.hexagonal.adapters.primary.controller.response;
 
 
-import lombok.Data;
+import lombok.*;
 
 @Data
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class CustomerResponse {
 
     private String name;
-
     private String email;
-
-    private AddressResponse adress;
-
+    private AddressResponse address;
     private String cpf;
-
     private Boolean isValidCpf;
 }

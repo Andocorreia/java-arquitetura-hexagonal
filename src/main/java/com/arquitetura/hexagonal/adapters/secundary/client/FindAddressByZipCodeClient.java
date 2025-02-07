@@ -1,16 +1,15 @@
 package com.arquitetura.hexagonal.adapters.secundary.client;
 
-import com.arquitetura.hexagonal.adapters.secundary.client.response.AdressResponse;
+import com.arquitetura.hexagonal.adapters.secundary.client.response.AddressResponse;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 @FeignClient(
-        name = "findAdressByZipCodeClient",
-        url = "${arantes.client.adress.url}"
-)
-public interface FindAdressByZipCodeClient {
+        name = "findAddressByZipCodeClient",
+        url = "${client.address.url}")
+public interface FindAddressByZipCodeClient {
 
     @GetMapping("/{zipCode}")
-    AdressResponse find(@PathVariable("zipCode") String zipCode);
+    AddressResponse find(@PathVariable("zipCode") String zipCode);
 }

@@ -13,7 +13,7 @@ public class FindCustomerByIdUseCase implements FindCustomerByIdInputPort {
         this.findCustomerByIdOutputPort = findCustomerByIdOutputPort;
     }
 
-    @Autowired
+    @Override
     public Customer find(String id) {
         return this.findCustomerByIdOutputPort.find(id).orElseThrow(() -> new RuntimeException("Customer not found"));
     }

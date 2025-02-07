@@ -1,10 +1,37 @@
-arantes:
-  client:
-    adress:
-        url: http://localhost:8082/adresses
+server:
+  port: 8081
 
-string:
+client:
+  id: ccloud-springboot-client-d4b6e617-a023-4542-8043-6b3517a13e73
+  address:
+      url: http://localhost:8082/addresses
+
+spring:
   data:
-    mongoDb:
+    mongodb:
       uri: mongodb+srv://aocorreia1:admin@cluster0.sqqj0.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
-      database: hexagonal
+      database: arquitetura_hexagonal
+  kafka:
+    bootstrap-servers: pkc-56d1g.eastus.azure.confluent.cloud:9092
+    properties:
+      security:
+        protocol: SASL_SSL
+      sasl:
+        mechanism: PLAIN
+        jaas:
+          config: org.apache.kafka.common.security.plain.PlainLoginModule required username='YY7HHUX3RPYQR7RK' password='ZFqZUDBpVpJpi571IqgqRfc5d1E/ZANrU3SbzqVqUtItdF8RBc4YgI0gfC/C0Wt0';
+      session:
+        timeout:
+          ms: 45000
+    producer:
+      client-id: spring-boot-producer
+    consumer:
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+
+logging:
+  level:
+    org:
+      springframework:
+        data:
+          mongodb: DEBUG

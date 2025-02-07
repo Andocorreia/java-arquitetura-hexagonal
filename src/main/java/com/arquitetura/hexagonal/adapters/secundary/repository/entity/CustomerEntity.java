@@ -1,11 +1,16 @@
 package com.arquitetura.hexagonal.adapters.secundary.repository.entity;
 
-import lombok.Data;
+import com.azure.core.annotation.Get;
+import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
-@Document(collection = "customer")
+@Document(collection = "clients")
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
 public class CustomerEntity {
 
     @Id
@@ -15,7 +20,7 @@ public class CustomerEntity {
 
     private String email;
 
-    private AddressEntity adress;
+    private AddressEntity address;
 
     private String cpf;
 
