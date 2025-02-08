@@ -15,4 +15,9 @@ public class DeleteCustomerAdapter implements DeleteCustomerOutputPort {
     public void delete(String id) {
         this.customerRepository.deleteById(id);
     }
+
+    @Override
+    public void deleteAll() {
+        this.customerRepository.deleteAll();
+    }
 }

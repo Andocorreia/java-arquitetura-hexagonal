@@ -10,7 +10,7 @@ import com.arquitetura.hexagonal.application.ports.output.SendCpfForValidationOu
 
 public class InsertCustomerUseCase implements InsertCustomerInputPort {
 
-    private final static String KEY = "CPF";
+    private final static String CPF = "CPF";
     private final FindAddressOutputPort findAddressOutputPort;
     private final InsertCustomerOutputPort insertCustomerOutputPort;
     private final SendCpfForValidationOutputPort sendCpfForValidationOutputPort;
@@ -29,7 +29,7 @@ public class InsertCustomerUseCase implements InsertCustomerInputPort {
         customer.setAddress(address);
         this.insertCustomerOutputPort.insert(customer);
 
-        this.sendCpfForValidationOutputPort.send(this.KEY, customer.getCpf());
+        this.sendCpfForValidationOutputPort.send(this.CPF, customer.getCpf());
 
     }
 }

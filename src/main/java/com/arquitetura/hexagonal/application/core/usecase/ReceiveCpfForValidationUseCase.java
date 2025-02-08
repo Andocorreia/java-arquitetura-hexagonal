@@ -5,8 +5,6 @@ import com.arquitetura.hexagonal.application.ports.input.ReceiveCpfForValidation
 import com.arquitetura.hexagonal.application.ports.output.FindCustomerOutputPort;
 import com.arquitetura.hexagonal.application.ports.output.UpdateCustomerOutputPort;
 
-import java.util.Optional;
-
 public class ReceiveCpfForValidationUseCase implements ReceiveCpfForValidationInputPort {
 
     private FindCustomerOutputPort findCustomerOutputPort;
@@ -19,7 +17,7 @@ public class ReceiveCpfForValidationUseCase implements ReceiveCpfForValidationIn
 
     @Override
     public void receiveCpfForValidation(String cpf) {
-        Customer customer = this.findCustomerOutputPort.findByDocument(cpf).orElseThrow();
+        Customer customer = this.findCustomerOutputPort.findByDocument(cpf).stream().findFirst().orElseThrow();
         customer.setIsValidCpf(true);
         this.updateCustomerOutputPort.update(customer);
     }

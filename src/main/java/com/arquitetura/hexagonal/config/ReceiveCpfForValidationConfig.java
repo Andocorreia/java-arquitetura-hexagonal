@@ -3,7 +3,6 @@ package com.arquitetura.hexagonal.config;
 import com.arquitetura.hexagonal.adapters.secundary.FindCustomerAdapter;
 import com.arquitetura.hexagonal.adapters.secundary.UpdateCustomerAdapter;
 import com.arquitetura.hexagonal.application.core.usecase.ReceiveCpfForValidationUseCase;
-import com.arquitetura.hexagonal.application.ports.input.ReceiveCpfForValidationInputPort;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -11,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
 public class ReceiveCpfForValidationConfig {
 
     @Bean
-    public ReceiveCpfForValidationUseCase receiveCpfForValidationInputPort(
+    public ReceiveCpfForValidationUseCase receiveCpfForValidationUseCase(
             FindCustomerAdapter findCustomerAdapter, UpdateCustomerAdapter updateCustomerAdapter) {
         return new ReceiveCpfForValidationUseCase(findCustomerAdapter, updateCustomerAdapter);
     }

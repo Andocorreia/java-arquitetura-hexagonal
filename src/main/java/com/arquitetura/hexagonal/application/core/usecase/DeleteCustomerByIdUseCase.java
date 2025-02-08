@@ -16,4 +16,9 @@ public class DeleteCustomerByIdUseCase implements DeleteCustomerByIdInputPort {
     public void delete(String id) {
         this.deleteCustomerOutputPort.delete(id);
     }
+
+    @Override
+    public void deleteAll() {
+        this.deleteCustomerOutputPort.deleteAll();
+    }
 }

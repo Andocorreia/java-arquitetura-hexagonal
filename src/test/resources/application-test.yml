@@ -1,0 +1,10 @@
+spring:
+  profile:
+    active: test
+  main:
+    allow-bean-definition-overriding: true
+
+db_user: "TESTE"
+db_password: "TESTE"
+kafka_user: "TESTE"
+kafka_password: "TESTE"

@@ -1,12 +1,15 @@
 package com.arquitetura.hexagonal.adapters.secundary;
 
 import com.arquitetura.hexagonal.adapters.secundary.repository.CustomerRepository;
-import com.arquitetura.hexagonal.adapters.secundary.repository.mapper.CustomerEntityMapper;
+import com.arquitetura.hexagonal.adapters.secundary.mapper.CustomerEntityMapper;
+import com.arquitetura.hexagonal.adapters.secundary.repository.entity.CustomerEntity;
 import com.arquitetura.hexagonal.application.core.domain.Customer;
 import com.arquitetura.hexagonal.application.ports.output.FindCustomerOutputPort;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.Collection;
+import java.util.List;
 import java.util.Optional;
 
 @Component
@@ -27,5 +30,11 @@ public class FindCustomerAdapter implements FindCustomerOutputPort {
     public Optional<Customer> findByDocument(String document) {
         var customerEntity = this.customerRepository.findByCpf(document);
         return customerEntity.map(entity -> customerEntityMapper.toCustomer(entity));
+    }
+
+    @Override
+    public Optional<Collection<Customer>> findAll() {
+        var customerEntity =  this.customerRepository.findAll();
+        return Optional.ofNullable(customerEntityMapper.toCustomerList(customerEntity));
     }
 }

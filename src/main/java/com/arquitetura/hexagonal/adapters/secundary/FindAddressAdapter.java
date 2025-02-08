@@ -1,8 +1,8 @@
 package com.arquitetura.hexagonal.adapters.secundary;
 
-import com.arquitetura.hexagonal.adapters.secundary.client.FindAddressByZipCodeClient;
-import com.arquitetura.hexagonal.adapters.secundary.client.mapper.AddressResponseMapper;
-import com.arquitetura.hexagonal.adapters.secundary.client.response.AddressResponse;
+import com.arquitetura.hexagonal.adapters.secundary.repository.FindAddressByZipCodeClientRepository;
+import com.arquitetura.hexagonal.adapters.secundary.repository.response.ClientAddressResponse;
+import com.arquitetura.hexagonal.adapters.secundary.mapper.AddressResponseMapper;
 import com.arquitetura.hexagonal.application.core.domain.Address;
 import com.arquitetura.hexagonal.application.ports.output.FindAddressOutputPort;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,14 +12,14 @@ import org.springframework.stereotype.Component;
 public class FindAddressAdapter implements FindAddressOutputPort {
 
     @Autowired
-    private FindAddressByZipCodeClient findAddressByZipCodeClient;
+    private FindAddressByZipCodeClientRepository findAddressByZipCodeClientRepository;
 
     @Autowired
     private AddressResponseMapper addressResponseMapper;
 
     @Override
     public Address find(String zipCode) {
-        AddressResponse addressResponse = findAddressByZipCodeClient.find(zipCode);
-       return this.addressResponseMapper.toAddress(addressResponse);
+        ClientAddressResponse clientAddressResponse = findAddressByZipCodeClientRepository.find(zipCode);
+       return this.addressResponseMapper.toAddress(clientAddressResponse);
     }
 }
