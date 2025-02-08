@@ -9,7 +9,7 @@ client:
 spring:
   data:
     mongodb:
-      uri: mongodb+srv://aocorreia1:admin@cluster0.sqqj0.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+      uri: mongodb+srv://${db_user}:${db_password}@cluster0.sqqj0.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
       database: arquitetura_hexagonal
   kafka:
     bootstrap-servers: pkc-56d1g.eastus.azure.confluent.cloud:9092
@@ -19,7 +19,7 @@ spring:
       sasl:
         mechanism: PLAIN
         jaas:
-          config: org.apache.kafka.common.security.plain.PlainLoginModule required username='YY7HHUX3RPYQR7RK' password='ZFqZUDBpVpJpi571IqgqRfc5d1E/ZANrU3SbzqVqUtItdF8RBc4YgI0gfC/C0Wt0';
+          config: org.apache.kafka.common.security.plain.PlainLoginModule required username=${kafka_user} password=${kafka_password};
       session:
         timeout:
           ms: 45000
