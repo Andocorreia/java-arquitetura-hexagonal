@@ -4,7 +4,9 @@ import com.arquitetura.hexagonal.application.core.domain.Customer;
 
 import java.util.Optional;
 
-public interface FindCustomerByIdOutputPort {
+public interface FindCustomerOutputPort {
 
-    Optional<Customer> find(String id);
+    Optional<Customer> findById(String id);
+
+    Optional<Customer> findByDocument(String document);
 }

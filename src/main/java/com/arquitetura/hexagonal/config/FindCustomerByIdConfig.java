@@ -1,7 +1,7 @@
 package com.arquitetura.hexagonal.config;
 
 
-import com.arquitetura.hexagonal.adapters.secundary.FindCustomerByIdAdapter;
+import com.arquitetura.hexagonal.adapters.secundary.FindCustomerAdapter;
 import com.arquitetura.hexagonal.application.core.usecase.FindCustomerByIdUseCase;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -11,8 +11,8 @@ public class FindCustomerByIdConfig {
 
     @Bean
     public FindCustomerByIdUseCase findCustomerByIdUseCase(
-            FindCustomerByIdAdapter findCustomerByIdAdapter
+            FindCustomerAdapter findCustomerAdapter
     ) {
-       return new FindCustomerByIdUseCase(findCustomerByIdAdapter);
+       return new FindCustomerByIdUseCase(findCustomerAdapter);
     }
 }

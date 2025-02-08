@@ -7,7 +7,7 @@ import com.arquitetura.hexagonal.application.core.domain.Customer;
 import com.arquitetura.hexagonal.application.ports.input.FindCustomerByIdInputPort;
 import com.arquitetura.hexagonal.application.ports.input.InsertCustomerInputPort;
 import com.arquitetura.hexagonal.application.ports.input.UpdateCustomerInputPort;
-import com.arquitetura.hexagonal.application.ports.output.DeleteCustomerByIdOutputPort;
+import com.arquitetura.hexagonal.application.ports.output.DeleteCustomerOutputPort;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -30,7 +30,7 @@ public class CustomerController {
     private UpdateCustomerInputPort updateCustomerInputPort;
 
     @Autowired
-    private DeleteCustomerByIdOutputPort deleteCustomerByIdOutputPort;
+    private DeleteCustomerOutputPort deleteCustomerOutputPort;
 
     @PostMapping
     public ResponseEntity<Void> insert(@Valid @RequestBody CustomerRequest request){
@@ -55,7 +55,7 @@ public class CustomerController {
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(@PathVariable final String id) {
-        this.deleteCustomerByIdOutputPort.delete(id);
+        this.deleteCustomerOutputPort.delete(id);
         return ResponseEntity.noContent().build();
     }
 }

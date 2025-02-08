@@ -1,5 +1,5 @@
 package com.arquitetura.hexagonal.application.ports.output;
 
-public interface DeleteCustomerByIdOutputPort {
+public interface DeleteCustomerOutputPort {
     void delete(String id);
 }

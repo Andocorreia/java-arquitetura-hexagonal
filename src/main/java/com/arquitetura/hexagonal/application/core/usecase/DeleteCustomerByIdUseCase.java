@@ -2,23 +2,18 @@ package com.arquitetura.hexagonal.application.core.usecase;
 
 import com.arquitetura.hexagonal.application.ports.input.DeleteCustomerByIdInputPort;
 import com.arquitetura.hexagonal.application.ports.input.FindCustomerByIdInputPort;
-import com.arquitetura.hexagonal.application.ports.output.DeleteCustomerByIdOutputPort;
+import com.arquitetura.hexagonal.application.ports.output.DeleteCustomerOutputPort;
 
 public class DeleteCustomerByIdUseCase implements DeleteCustomerByIdInputPort {
 
-    private final FindCustomerByIdInputPort findCustomerByIdInputPort;
+    private final DeleteCustomerOutputPort deleteCustomerOutputPort;
 
-    private final DeleteCustomerByIdOutputPort deleteCustomerByIdOutputPort;
-
-    public DeleteCustomerByIdUseCase(FindCustomerByIdInputPort findCustomerByIdInputPort,
-                                     DeleteCustomerByIdOutputPort deleteCustomerByIdOutputPort) {
-        this.findCustomerByIdInputPort = findCustomerByIdInputPort;
-        this.deleteCustomerByIdOutputPort = deleteCustomerByIdOutputPort;
+    public DeleteCustomerByIdUseCase(DeleteCustomerOutputPort deleteCustomerOutputPort) {
+        this.deleteCustomerOutputPort = deleteCustomerOutputPort;
     }
 
     @Override
     public void delete(String id) {
-        this.findCustomerByIdInputPort.find(id);
-        this.deleteCustomerByIdOutputPort.delete(id);
+        this.deleteCustomerOutputPort.delete(id);
     }
 }

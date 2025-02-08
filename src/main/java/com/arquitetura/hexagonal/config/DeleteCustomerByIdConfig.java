@@ -1,6 +1,6 @@
 package com.arquitetura.hexagonal.config;
 
-import com.arquitetura.hexagonal.adapters.secundary.DeleteCustomerByIdAdapter;
+import com.arquitetura.hexagonal.adapters.secundary.DeleteCustomerAdapter;
 import com.arquitetura.hexagonal.application.core.usecase.DeleteCustomerByIdUseCase;
 import com.arquitetura.hexagonal.application.core.usecase.FindCustomerByIdUseCase;
 import org.springframework.context.annotation.Bean;
@@ -11,9 +11,8 @@ public class DeleteCustomerByIdConfig {
 
     @Bean
     public DeleteCustomerByIdUseCase deleteCustomerByIdUseCase(
-            FindCustomerByIdUseCase findCustomerByIdUseCase,
-            DeleteCustomerByIdAdapter deleteCustomerByIdAdapter
+            DeleteCustomerAdapter deleteCustomerAdapter
     ) {
-        return new DeleteCustomerByIdUseCase(findCustomerByIdUseCase, deleteCustomerByIdAdapter);
+        return new DeleteCustomerByIdUseCase(deleteCustomerAdapter);
     }
 }

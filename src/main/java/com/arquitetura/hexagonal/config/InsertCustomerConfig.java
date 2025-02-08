@@ -1,6 +1,6 @@
 package com.arquitetura.hexagonal.config;
 
-import com.arquitetura.hexagonal.adapters.secundary.FindAddressByZipCodeAdapter;
+import com.arquitetura.hexagonal.adapters.secundary.FindAddressAdapter;
 import com.arquitetura.hexagonal.adapters.secundary.InsertCustomerAdapter;
 import com.arquitetura.hexagonal.adapters.secundary.SendCpfForValidationAdapter;
 import com.arquitetura.hexagonal.application.core.usecase.InsertCustomerUseCase;
@@ -12,10 +12,10 @@ public class InsertCustomerConfig {
 
     @Bean
     public InsertCustomerUseCase insertCustomerUseCase(
-            FindAddressByZipCodeAdapter findAddressByZipCodeAdapter,
+            FindAddressAdapter findAddressAdapter,
             InsertCustomerAdapter insertCustomerAdapter,
             SendCpfForValidationAdapter sendCpfForValidationAdapter
     ) {
-       return new InsertCustomerUseCase(findAddressByZipCodeAdapter, insertCustomerAdapter, sendCpfForValidationAdapter);
+       return new InsertCustomerUseCase(findAddressAdapter, insertCustomerAdapter, sendCpfForValidationAdapter);
     }
 }

@@ -1,6 +1,6 @@
 package com.arquitetura.hexagonal.config;
 
-import com.arquitetura.hexagonal.adapters.secundary.FindAddressByZipCodeAdapter;
+import com.arquitetura.hexagonal.adapters.secundary.FindAddressAdapter;
 
 import com.arquitetura.hexagonal.adapters.secundary.UpdateCustomerAdapter;
 import com.arquitetura.hexagonal.application.core.usecase.FindCustomerByIdUseCase;
@@ -13,10 +13,9 @@ public class UpdateCustomerConfig {
 
     @Bean
     public UpdateCustomerUseCase updateCustomerUseCase(
-            FindCustomerByIdUseCase findCustomerByIdUseCase,
-            FindAddressByZipCodeAdapter findAddressByZipCodeOutputPort,
+            FindAddressAdapter findAddressByZipCodeOutputPort,
             UpdateCustomerAdapter updateCustomerOutputPort
     ) {
-       return new UpdateCustomerUseCase(findCustomerByIdUseCase, findAddressByZipCodeOutputPort, updateCustomerOutputPort);
+       return new UpdateCustomerUseCase(findAddressByZipCodeOutputPort, updateCustomerOutputPort);
     }
 }
