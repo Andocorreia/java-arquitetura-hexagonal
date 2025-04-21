@@ -1,5 +1,12 @@
 # java-arquitetura-hexagonal
-Projeto java em Arquitetura Hexagonal version v18.20.5
+Projeto java montado em uma Arquitetura Hexagonal com Spring boot 
+
+# Stack
+- Java 21
+- Spring Boot
+- Hexagonal Architecture
+- Confluent Kafka
+- MongoDB
 
 ## Development server
 
